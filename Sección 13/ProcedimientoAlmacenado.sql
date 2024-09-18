@@ -1,0 +1,20 @@
+
+--- CREACIÓN DE PROCEDIMIENTOS ALMACENADOS
+
+CREATE  PROCEDURE INSERTAR_REGISTRO_TB_MEDIDAS
+AS
+
+BEGIN
+        INSERT INTO TB_MEDIDAS(
+                CODIGO_ME,
+                ABREVIATURA_ME,
+                DESCRIPCION_ME)
+        VALUES(
+                3,
+                'LT',
+                'LITROS');
+        COMMIT;
+END;
+/
+
+EXECUTE INSERTAR_REGISTRO_TB_MEDIDAS;

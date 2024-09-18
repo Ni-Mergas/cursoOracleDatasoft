@@ -1,0 +1,33 @@
+--- OPERADORES
+
+CREATE TABLE TB_NOTAS_ALUMNOS (
+        CODIGO_AL NUMBER(3,0),
+        NOMBRE_AL VARCHAR2 (50),
+        CURSO VARCHAR2 (30),
+        NOTA1 NUMBER(2,0),
+        NOTA2 NUMBER(2,0),
+        NOTA3 NUMBER(2,0),
+        PROMEDIO NUMBER(5,2)
+        );
+        
+ SELECT * FROM TB_NOTAS_ALUMNOS;
+        
+INSERT INTO TB_NOTAS_ALUMNOS
+VALUES(3, 
+             'SALOME',
+             'MATEMATICAS',
+             16,
+             13,
+             10,
+             0
+             );
+--- INSERTANDO PROMEDIO CON OPERADORES MATEMATICOS
+
+SELECT NOMBRE_AL, CODIGO_AL, (NOTA1 +NOTA2 + NOTA3) PROMEDIO_NOTAS 
+FROM TB_NOTAS_ALUMNOS;
+
+SELECT CODIGO_AL,
+             NOMBRE_AL,
+             CURSO,
+             ROUND((NOTA1 + NOTA2 + NOTA3)/3, 2) AS PROMEDIO_NOTAS 
+FROM tb_notas_alumnos
